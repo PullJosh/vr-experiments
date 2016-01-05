@@ -152,7 +152,9 @@ scene.add(cube);
 // Request animation frame loop function
 function animate(timestamp) {
   // Apply rotation to cube mesh
-  cube.rotation.y += 0.01;
+  cube.rotation.x = 2 * camera.rotation.x;
+  cube.rotation.y = 2 * camera.rotation.y;
+  cube.rotation.z = 2 * camera.rotation.z;
 
   // Update VR headset position and apply to camera.
   controls.update();
