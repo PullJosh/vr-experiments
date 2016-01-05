@@ -143,8 +143,8 @@ var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
 var material = new THREE.MeshNormalMaterial();
 var allCubes = [];
 
-for(x = -4; x < 4; x++) {
-  for(y = -4; y < 4; y++) {
+for(x = -3; x < 3; x++) {
+  for(y = -3; y < 3; y++) {
     // Position cube mesh
     var cube = new THREE.Mesh(geometry, material);
     cube.position.x = x + 0.5;
