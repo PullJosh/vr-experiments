@@ -110,7 +110,7 @@ effect.setSize(window.innerWidth, window.innerHeight);
 
 
 // Add a repeating grid as a skybox.
-var boxWidth = 10;
+var boxWidth = 8;
 var loader = new THREE.TextureLoader();
 loader.load('img/box.png', onTextureLoaded);
 
@@ -144,7 +144,7 @@ var material = new THREE.MeshNormalMaterial();
 var cube = new THREE.Mesh(geometry, material);
 
 // Position cube mesh
-cube.position.z = -1.7;
+cube.position.z = -1.3;
 
 
 // Add cube mesh to your three.js scene
