@@ -143,22 +143,78 @@ var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
 var material = new THREE.MeshNormalMaterial();
 var allCubes = [];
 
-for(x = -3; x < 3; x++) {
-  for(y = -3; y < 3; y++) {
-    // Position cube mesh
-    var cube = new THREE.Mesh(geometry, material);
-    cube.position.x = x + 0.5;
-    cube.position.y = y + 0.5;
-    cube.position.z = -1.3;
-    
-    // Add cube mesh to your three.js scene
-    allCubes.push(cube);
-    scene.add(cube);
-  }
-}
+(function addCubes(){
+  for(x = -3; x < 3; x++) {
+    for(y = -3; y < 3; y++) {
+      // Position cube mesh
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.x = x + 0.5;
+      cube.position.y = y + 0.5;
+      cube.position.z = -2;
+      
+      // Add cube mesh to your three.js scene
+      allCubes.push(cube);
+      scene.add(cube);
 
-// Set camera position
-camera.position.z = 1.3;
+
+      // Position cube mesh
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.x = x + 0.5;
+      cube.position.y = y + 0.5;
+      cube.position.z = 2;
+      
+      // Add cube mesh to your three.js scene
+      allCubes.push(cube);
+      scene.add(cube);
+    }
+  }
+  for(x = -3; x < 3; x++) {
+    for(z = -1; z < 2; z++) {
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.x = x + 0.5;
+      cube.position.y = 2.5;
+      cube.position.z = z;
+      
+      // Add cube mesh to your three.js scene
+      allCubes.push(cube);
+      scene.add(cube);
+
+
+      // Position cube mesh
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.x = x + 0.5;
+      cube.position.y = -2.5;
+      cube.position.z = z;
+      
+      // Add cube mesh to your three.js scene
+      allCubes.push(cube);
+      scene.add(cube);
+    }
+  }
+  for(y = -3; y < 3; y++) {
+    for(z = -1; z < 2; z++) {
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.x = 2.5;
+      cube.position.y = y + 0.5;
+      cube.position.z = z;
+      
+      // Add cube mesh to your three.js scene
+      allCubes.push(cube);
+      scene.add(cube);
+
+
+      // Position cube mesh
+      var cube = new THREE.Mesh(geometry, material);
+      cube.position.x = -2.5;
+      cube.position.y = y + 0.5;
+      cube.position.z = z;
+      
+      // Add cube mesh to your three.js scene
+      allCubes.push(cube);
+      scene.add(cube);
+    }
+  }
+})();
   
 // Request animation frame loop function
 function animate(timestamp) {
@@ -168,7 +224,7 @@ function animate(timestamp) {
     // Apply rotation to cube mesh
     cube.rotation.x = 2 * camera.rotation.x;
     cube.rotation.y = 2 * camera.rotation.y;
-    cube.rotation.z = 2 * camera.rotation.z;
+    //cube.rotation.z = 2 * camera.rotation.z;
   }
 
   // Update VR headset position and apply to camera.
