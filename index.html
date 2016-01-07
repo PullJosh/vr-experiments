@@ -150,7 +150,7 @@ var allCubes = [];
       var cube = new THREE.Mesh(geometry, material);
       cube.position.x = x + 0.5;
       cube.position.y = y + 0.5;
-      cube.position.z = -2;
+      cube.position.z = -2.5;
       
       // Add cube mesh to your three.js scene
       allCubes.push(cube);
@@ -161,19 +161,19 @@ var allCubes = [];
       var cube = new THREE.Mesh(geometry, material);
       cube.position.x = x + 0.5;
       cube.position.y = y + 0.5;
-      cube.position.z = 2;
+      cube.position.z = 2.5;
       
       // Add cube mesh to your three.js scene
       allCubes.push(cube);
       scene.add(cube);
     }
   }
-  for(x = -3; x < 3; x++) {
-    for(z = -1; z < 2; z++) {
+  for(x = -2; x < 2; x++) {
+    for(z = -3; z < 2; z++) {
       var cube = new THREE.Mesh(geometry, material);
       cube.position.x = x + 0.5;
       cube.position.y = 2.5;
-      cube.position.z = z;
+      cube.position.z = z + 0.5;
       
       // Add cube mesh to your three.js scene
       allCubes.push(cube);
@@ -184,7 +184,7 @@ var allCubes = [];
       var cube = new THREE.Mesh(geometry, material);
       cube.position.x = x + 0.5;
       cube.position.y = -2.5;
-      cube.position.z = z;
+      cube.position.z = z + 0.5;
       
       // Add cube mesh to your three.js scene
       allCubes.push(cube);
@@ -192,11 +192,11 @@ var allCubes = [];
     }
   }
   for(y = -3; y < 3; y++) {
-    for(z = -1; z < 2; z++) {
+    for(z = -2; z < 2; z++) {
       var cube = new THREE.Mesh(geometry, material);
       cube.position.x = 2.5;
       cube.position.y = y + 0.5;
-      cube.position.z = z;
+      cube.position.z = z + 0.5;
       
       // Add cube mesh to your three.js scene
       allCubes.push(cube);
@@ -207,7 +207,7 @@ var allCubes = [];
       var cube = new THREE.Mesh(geometry, material);
       cube.position.x = -2.5;
       cube.position.y = y + 0.5;
-      cube.position.z = z;
+      cube.position.z = z + 0.5;
       
       // Add cube mesh to your three.js scene
       allCubes.push(cube);
