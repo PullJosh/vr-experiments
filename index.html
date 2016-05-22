@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<title>VR Experiment v8</title>
+<title>VR Experiment v9</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes">
@@ -137,6 +137,12 @@ function animate(timestamp) {
   if(allCubes.length > 100) {
     scene.remove(allCubes[0]);
     allCubes.shift();
+  }
+  
+  for(i = 0; i < allCubes.length; i++) {
+    allCubes[i].position.x *= 1.05;
+    allCubes[i].position.y *= 1.05;
+    allCubes[i].position.z *= 1.05;
   }
 
   // Update VR headset position and apply to camera.
