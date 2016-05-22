@@ -129,6 +129,7 @@ function animate(timestamp) {
   var vec = new THREE.Vector3(0, 0, -5);
   vec.applyQuaternion( camera.quaternion );
   cube.position.copy(vec);
+  cube.rotation = camera.rotation;
 
   allCubes.push(cube);
   scene.add(cube);
@@ -136,15 +137,6 @@ function animate(timestamp) {
   if(allCubes.length > 100) {
     scene.remove(allCubes[0]);
     allCubes.shift();
-  }
-  
-  for(i = 0; i < allCubes.length; i++) {
-    var cube = allCubes[i];
-    
-    // Apply rotation to cube mesh
-    cube.rotation.x = 2 * camera.rotation.x;
-    cube.rotation.y = 2 * camera.rotation.y;
-    //cube.rotation.z = 2 * camera.rotation.z;
   }
 
   // Update VR headset position and apply to camera.
