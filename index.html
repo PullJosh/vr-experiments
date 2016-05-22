@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<title>VR Experiment v5</title>
+<title>VR Experiment v6</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes">
@@ -126,8 +126,8 @@ function animate(timestamp) {
   // Add a cube
   var cube = new THREE.Mesh(geometry, material);
   cube.position.x = Math.cos(camera.rotation.y) * 5;
-  cube.position.y = Math.cos(camera.rotation.z) * 5;
-  cube.position.z = Math.cos(camera.rotation.x) * 5;
+  cube.position.y = Math.cos(camera.rotation.x) * 5;
+  cube.position.z = Math.cos(camera.rotation.z) * 5;
 
   allCubes.push(cube);
   scene.add(cube);
