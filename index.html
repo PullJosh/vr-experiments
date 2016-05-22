@@ -119,82 +119,21 @@ var manager = new WebVRManager(renderer, effect, params);
 var geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
 var material = new THREE.MeshNormalMaterial();
 var allCubes = [];
-
-(function addCubes(){
-  for(x = -3; x < 3; x++) {
-    for(y = -3; y < 3; y++) {
-      // Position cube mesh
-      var cube = new THREE.Mesh(geometry, material);
-      cube.position.x = x + 0.5;
-      cube.position.y = y + 0.5;
-      cube.position.z = -2.5;
-      
-      // Add cube mesh to your three.js scene
-      allCubes.push(cube);
-      scene.add(cube);
-
-
-      // Position cube mesh
-      var cube = new THREE.Mesh(geometry, material);
-      cube.position.x = x + 0.5;
-      cube.position.y = y + 0.5;
-      cube.position.z = 2.5;
-      
-      // Add cube mesh to your three.js scene
-      allCubes.push(cube);
-      scene.add(cube);
-    }
-  }
-  for(x = -2; x < 2; x++) {
-    for(z = -3; z < 2; z++) {
-      var cube = new THREE.Mesh(geometry, material);
-      cube.position.x = x + 0.5;
-      cube.position.y = 2.5;
-      cube.position.z = z + 0.5;
-      
-      // Add cube mesh to your three.js scene
-      allCubes.push(cube);
-      scene.add(cube);
-
-
-      // Position cube mesh
-      var cube = new THREE.Mesh(geometry, material);
-      cube.position.x = x + 0.5;
-      cube.position.y = -2.5;
-      cube.position.z = z + 0.5;
-      
-      // Add cube mesh to your three.js scene
-      allCubes.push(cube);
-      scene.add(cube);
-    }
-  }
-  for(y = -3; y < 3; y++) {
-    for(z = -2; z < 2; z++) {
-      var cube = new THREE.Mesh(geometry, material);
-      cube.position.x = 2.5;
-      cube.position.y = y + 0.5;
-      cube.position.z = z + 0.5;
-      
-      // Add cube mesh to your three.js scene
-      allCubes.push(cube);
-      scene.add(cube);
-
-
-      // Position cube mesh
-      var cube = new THREE.Mesh(geometry, material);
-      cube.position.x = -2.5;
-      cube.position.y = y + 0.5;
-      cube.position.z = z + 0.5;
-      
-      // Add cube mesh to your three.js scene
-      allCubes.push(cube);
-      scene.add(cube);
-    }
-  }
-})();
   
 // Request animation frame loop function
 function animate(timestamp) {
+  
+  // Add a cube
+  var cube = new THREE.Mesh(geometry, material);
+  cube.position.x = Math.cos(camera.rotation.x) * 20;
+  cube.position.y = Math.sin(camera.rotation.y) * 20;
+  cube.position.z = Math.random() * 15;
+
+  allCubes.push(cube);
+  scene.add(cube);
+  
+  if(allCubes.length > 10) allCubes.shift();
+  
   for(i = 0; i < allCubes.length; i++) {
     var cube = allCubes[i];
     
