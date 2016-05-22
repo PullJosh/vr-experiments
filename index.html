@@ -125,9 +125,9 @@ function animate(timestamp) {
   
   // Add a cube
   var cube = new THREE.Mesh(geometry, material);
-  cube.position.x = Math.cos(camera.rotation.x) * 5;
-  cube.position.y = Math.cos(camera.rotation.y) * 5;
-  cube.position.z = Math.cos(camera.rotation.z) * 5;
+  cube.position.x = Math.cos(camera.rotation.z) * 5;
+  cube.position.y = Math.cos(camera.rotation.x) * 5;
+  cube.position.z = Math.cos(camera.rotation.y) * 5;
 
   allCubes.push(cube);
   scene.add(cube);
